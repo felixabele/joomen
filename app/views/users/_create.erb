@@ -1,0 +1,10 @@
+<%#
+  Create User
+%>
+
+<%= form_for :user, :url => {:controller => :users, :action => :create},
+    :html => {:id => "new_user"} do |f| %>
+  <%= hidden_field(:event, :id) %>
+  <%= f.text_field :name %>
+  <%= cust_submit("new_user", t(:txt_add_usr)) %>
+<% end %>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="google-site-verification" content="p46nmF09MZTlk7yfDtYRXRqDy_vRfW65cxov-Zm1DKM" />
+<meta name="keywords" content="Aufgaben verteilen, wer bringt was, wer macht was, gruppenorganisation, party organisieren, partyorganisation, organisieren" />
+<meta name="description" content="Mit joomen verteilen Sie Aufgaben einfach per Drag'n'Drop. Kostenlose Gruppenorganisation ohne Anmeldung. Organisieren Sie eine Party, bei der jeder was mitbringt" />
+<meta name="copyright" content="Felix Abele, Berlin" />
+
+<title>Wer bringt was ? - joomen !</title>
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/images/favicon.png" />
+<%= stylesheet_link_tag 'global', 'jquery-ui' %>
+<%= javascript_include_tag 'jquery.min', 'jquery_ujs', 'jquery-ui-187-custom-min', 'scripts' %>
+
+<%= csrf_meta_tag %>
+
+<!-- Analytics Code -->
+<script type="text/javascript">
+
+  // Preload Images
+  function preload_imgs() {
+    img_list = new Array('/images/icons/drop_bg.png');
+    for (i = 0; i < img_list.length; i++) {
+      var p_img = new Image();
+      p_img.src = img_list[i];
+    }
+  }
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19936414-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  // Init Dialog
+  $(document).ready(function() {
+    $('a.dialog').click(function() {
+        $('<div />').appendTo('body').load($(this).attr('href') + ' form').dialog({
+            title: $(this).text(),
+            modal: true,
+            draggable: false
+        });
+        return false;
+    });
+    preload_imgs();
+  });
+
+
+</script>
+</head>
+
+<body>    
+
+    <div id="container">
+      <div id="header">
+        <!-- LOGO -->
+        <%= link_to(image_tag("/images/style/joomen_logo.png", :class=>"logo"), :root) %>
+
+        <!-- MENU -->
+        <%= link_to(image_tag("/images/icons/starten_btn.png", :class => "menu_item"),
+            :controller=>:events, :action=>:create) %>
+        <%= link_to(image_tag("/images/icons/informationen_btn.png", :class => "menu_item"),
+            :controller=>:static, :action=>:index)%>
+        <%= link_to(image_tag("/images/icons/demo_btn.png", :class => "menu_item"),'/find/demo_de')%>
+        
+        <div style="float: right; padding: 10px 30px 0 0">
+        <%= link_to(image_tag("/images/icons/gb.png", :title=>"Switch to english"),
+            :controller=>:static, :action=>:change_language, :language=>'en') %>
+        <%= link_to(image_tag("/images/icons/de.png", :title=>"Seite auf deutsch"),
+            :controller=>:static, :action=>:change_language, :language=>'de') %>
+        </div>
+      </div>
+
+      <div id="content">
+
+        <!-- Flash Message -->
+        <% if flash[:notice] %>
+            <div class="flash notice">
+                <%= flash[:notice] %>
+            </div>
+        <% end %>
+
+        <!-- Flash Error -->
+        <% if flash[:error] %>
+            <div class="flash error">
+                <%= flash[:error] %>
+            </div>
+        <% end %>
+
+        <!-- Content -->
+        <%= yield %>        
+      </div>
+
+      <!-- FOOTER -->
+      <div id="footer">
+        <table>
+          <tr>
+            <th>über joomen</th>
+            <th>Funktionen</th>
+          </tr>
+
+          <tr>
+            <td valign="top">
+                <%= link_to("was ist joomen ?", :controller => "static", :action => "about") %>  <br />
+                <%= link_to("Kontakt", :controller => "static", :action => "kontakt") %> <br />
+                <%= link_to("Impressum", :controller => "static", :action => "impressum") %> <br />
+                <!--<%= link_to("FAQ", :controller => "static", :action => "faq") %>-->
+            </td>
+            <td valign="top">
+                <%= link_to("Startseite", :controller => "static", :action => "index") %> <br />
+                <%= link_to("joomen erstellen", :controller=>:events, :action=>:create) %> <br />
+                <%#= link_to("joomen löschen", :controller=>:events, :action=>:create) %>
+                <%= link_to(image_tag("/images/icons/gb.png", :title=>"Switch to english"),
+                    :controller=>:static, :action=>:change_language, :language=>'en') %> 
+                <%= link_to(image_tag("/images/icons/de.png", :title=>"Seite auf deutsch"),
+                    :controller=>:static, :action=>:change_language, :language=>'de') %>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+</body>
+</html>
+

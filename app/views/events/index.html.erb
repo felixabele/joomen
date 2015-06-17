@@ -1,0 +1,33 @@
+<h1>Events Index</h1>
+
+<table>  
+
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>User</th>
+    <th>Items</th>
+    <th>Key</th>
+    <th>Created</th>
+    <th>Updated</th>
+    <th>Delete</th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.id %></td>
+    <td><%= link_to(event.name, "/find/#{event.key}") %></td>
+    <td><%= event.users.size %></td>
+    <td><%= event.items.size %></td>
+    <td><%= event.key %></td>
+    <td><%= german_format(event.created_at) %></td>
+    <td><%= german_format(event.updated_at) %></td>
+    <td>
+      <%= link_to('Destroy', {:action => :destroy, :id => event.id}, :confirm => "Wirklich löschen ?") %>
+    </td>
+  </tr>
+<% end %>
+
+<%= link_to('Add', :action => :create) %>  
+
+</table>

@@ -1,0 +1,54 @@
+
+<div id="free_items">
+  Items <br />
+    <div id="item_1" class="draggable">
+    <p>Kuchen</p>
+    </div>
+    <div id="item_2" class="draggable">
+    <p>Schuhe</p>
+    </div>
+    <div id="item_3" class="draggable">
+    <p>Hunde</p>
+    </div>
+    <div id="item_4" class="draggable">
+    <p>Enten</p>
+    </div>
+</div>
+
+<div class="droptarget" id="target_1">Benutzer 1 <br /></div>
+<br />
+<div class="droptarget" id="target_2">Benutzer 2 <br /></div>
+
+<br clear="all" />
+
+
+<script type="text/javascript">
+
+    $(function() {
+      $(".draggable").draggable({ helper: 'clone' });
+    });
+
+    // USER (Targets)
+    $(".droptarget").droppable({
+        hoverClass: "draghovered",
+        drop: function(ev, ui) {
+          var dropElemId = ui.draggable.attr("id");
+          var dropElem = ui.draggable;
+
+          dropElem.appendTo($(this));
+
+        }
+    });
+
+    // FREE-ITEMS (Target - Source)
+    $("#free_items").droppable({
+        hoverClass: "draghovered",
+        drop: function(ev, ui) {
+          var dropElemId = ui.draggable.attr("id");
+          var dropElem = ui.draggable;
+
+          dropElem.appendTo($(this));
+        }
+    });
+</script>
+

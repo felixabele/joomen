@@ -1,0 +1,37 @@
+<h1>Neues joomen erstellen</h1>
+
+<!-- Rounded Box -->
+<%= start_roundedBox(240) %>
+
+<%= form_for(:event, :url => {:action => :create}, :html => {:id=>"new_joomen"}) do |f| %>
+    <%= f.label(:name, "Name*") %>
+    <%= f.text_field :name %>
+
+    <div id="pw_input">
+      <%= f.label(:password, "Passwort wählen") %>
+      <%= f.text_field :password %>
+
+      <%= f.label(:email, "Email-Adresse") %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="pw_checkbox">
+      <%= check_box(:events, :password_chk, {}, "yes", "no") %>
+      <%= label(:events, :password_chk, "Passwort-Schutz") %>
+    </div>
+
+    <%= cust_submit("new_joomen", "weiter") %>
+<% end %>
+
+<%= end_roundedBox(240) %>
+
+
+<p>
+  *Geben Sie hier den Namen des gemeinsamen Events an.<br />
+  Z.B.: Abendessen, Raclette, Wanderung, Gruppenarbeit, ...
+</p>
+
+
+
+
+

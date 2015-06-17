@@ -1,0 +1,24 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: joomen_dev
+  username: root
+  password: poor*kane
+  host: 127.0.0.1
+  port: 3306
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: joomen_prod
+  username: root
+  password: poor*kane
+  host: 127.0.0.1
+  port: 3306
+

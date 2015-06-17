@@ -1,0 +1,51 @@
+<%#
+INDEX
+%>
+
+<% if !@my_joomen.nil? %>
+  <h2>Erst kürzlich besuchte joomen:</h2>
+  <ul>
+  <% @my_joomen.each do |event| %>
+    <li><%= link_to(event.name, :controller => :events, :action => :show, :id => event.key) %></li>
+  <% end %>
+  </ul>
+  <br />
+<% end %>
+
+<h1>"Wer bringt was? Wer macht was?"</h1>
+
+<p>
+  Einfache Gruppenorganisation mit joomen
+</p>
+
+<!-- Left -->
+<div style="float: left; width: 550px">
+  <%= image_tag("/images/sample.gif", :title => "Verteilen Sie Aufgaben per Drag'n'Drop") %>
+</div>
+
+<!-- Right -->
+<div style="float: left; width: 400px">
+  <h2>Verteilen Sie Aufgaben einfach per Drag'n'Drop</h2>
+  <ul>
+    <li>
+    Legen Sie beliebig viele Teilnehmer an und deligieren<br />
+    Sie beliebig viele Aufgaben.
+    </li>
+
+    <li>Kostenlose Gruppenorganisation</li>
+    <li>Einfach und ohne Anmeldung</li>
+  </ul><br />
+
+  <h2>Einfache Gruppenoraganisation</h2>
+  <ul>
+    <li>Organisieren Sie eine Party, bei der jeder was mitbringt.</li>
+    <li>Effektive Aufgabenverteilung bei Gruppenarbeiten</li>
+    <li>Und vieles Mehr ...</li
+  </ul>
+
+  <p style="margin-top: 40px; margin-left: 70px">
+   <%= link_to(image_tag("/images/icons/start_btn.png"), 'start') %>
+  </p>
+</div>
+
+<br clear="all" />

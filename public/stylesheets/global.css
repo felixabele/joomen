@@ -1,0 +1,208 @@
+
+body {
+  font-family: "trebuchet MS", verdana; color: #626095; background-color: #efefee;
+  margin: 0; padding: 0; font-size: 13px}
+a:link, a:visited {
+  border: none; color: #626095; font-size: 12px}
+a img {
+  border:none;}
+h1 {
+    font-size: 1.6em; text-shadow: 1px 1px 1px #fff;}
+h2 {
+  font-size: 1.2em; margin: 0; /*margin-bottom: 0.5em; display: inline*/}
+p {}
+  
+.flash {
+  padding: 0.2em}
+  
+.notice {
+  color: #008414;}
+  
+.error {
+  color: #990A0C;}
+  
+label {
+  display: block;}
+  
+#newForm {
+  margin: 1em 0; padding: 0.5em; background-color: #E7E7E7;}
+  
+input {
+  margin: 0.5em 0;}
+  
+.newBookmark {
+  margin-top: 1em; display: block;}
+  
+.formError{
+	color: red;
+}
+.fieldWithErrors {
+  background-color: red;
+}
+
+/*  ---------------------------
+            Grund-Layout
+    --------------------------- */
+#container {}
+  
+#header {
+ color: #fff;
+ height:60px; background-image: url(/images/style/menu_bg.png);
+ padding-left: 40px
+}  
+#content {
+  padding: 10px; min-height: 400px; background-color: #dae2fb;
+  background-image: url(/images/style/gradient_bg.png);
+  background-repeat: repeat-x; padding-left: 100px;}
+#footer {
+    background-image: url(/images/style/footer_bg.png); background-repeat: repeat-x;
+    background-color: #efefee; }
+
+#left_column, #right_column { 
+    float: left; width:500px;}
+
+#right_column {}
+
+.menu_item {
+    float: left; margin: 16px 15px 0 15px;}
+.logo {
+    float: left; margin-right: 120px;}
+
+/* BOX */	
+.box_body { 
+    width:452px; min-height:400px;
+    background-image: url(/images/style/aufgaben_bg.jpg); background-repeat: no-repeat; background-position: center}
+	
+/* USER */
+.u_left, .u_right {
+    background-image: url(/images/style/user_header.png); width: 7px; height: 20px; float: left}
+.u_right {
+    background-position: right;}
+.u_middle {
+    width:210px; height:16px; margin-bottom:4px; font-size: 12px;
+    border: #ffa735 solid 1px; border-right: none; border-left: none; background-color: white;
+    font-size:11px; padding:2px 0 0 6px; color: #e07a0d; float:left}
+.user_container {
+    float:left; margin: 0 10px 20px 0}
+
+#new_user {
+    margin: 12px 0 10px 0}
+#new_user input {
+    float: left; margin-right: 10px; -moz-border-radius: 3px; border-radius: 3px;
+    border: 1px solid #C0C0C0; padding: 2px; color: #626095}
+#new_user .btn {
+    margin-top: 6px; float: left}
+
+/*  ---------------------------
+            Hauptseite
+    --------------------------- */
+.user {
+    width: 220px; min-height: 140px; overflow: auto;
+    padding: 4px;  background-color: #fff;  border: #ffa735 solid 1px;
+    background-image: url(/images/style/user_bg.jpg); background-repeat: no-repeat; background-position:  center}
+
+.draghovered {
+    background-color: #F0F3FF;
+}
+
+
+/* ---------------------------
+		Rounded Box
+   --------------------------- */
+.b_or, .b_ol, .b_ur, .b_ul {
+    float: left; background-image: url(/images/style/round_corners.png);
+    width: 7px; height: 7px;}
+.b_body {
+    border-left: solid 1px #ffa735; border-right: solid 1px #ffa735;
+    padding: 10px; background-color: white; clear: left}
+.b_ul {
+    background-position: left bottom;}
+.b_or {
+    background-position: right top;}
+.b_ur {
+    background-position: right bottom;}
+.b_om, .b_um {
+    background-color: white; height: 6px; float:left}
+.b_om {
+    border-top: solid 1px #ffa735;}
+.b_um {
+    border-bottom: solid 1px #ffa735;}
+
+
+/*  ---------------------------
+            BUTTON
+    --------------------------- */
+.btn {
+    cursor: pointer;}
+.btn_left, .btn_right {
+    background-image: url(/images/style/btn_bg.png); height: 24px; width: 11px; float:left}
+.btn_right {
+    background-position: right;}
+.btn_middle {
+    background-image: url(/images/style/btn_m_bg.png); height: 21px; float: left;
+    color: #5d5d5d; text-shadow: 1px 1px 1px #fff; padding-top: 3px;}
+
+
+/*  ---------------------------
+            ITEM
+    --------------------------- */
+.i_top, .i_bottom {
+    background-image: url(/images/style/item_bg.png); width: 90px; height: 6px; z-index: 10;}
+.i_bottom { 
+    background-position: bottom }
+.i_mid {
+    background: #d4ecb0; width: 82px; min-height: 40px; padding: 0 3px 0 3px;
+    border: 1px solid #a7c19a; border-top: none; border-bottom: none;
+    font-size:10px; z-index: 5}
+
+.block_item {
+    width: 90px; margin: 5px;
+    float: left; cursor: move}
+ 
+.row_item, .items_container div {
+    padding: 2px 2px 2px 4px; margin: 4px; border: 1px solid #a7c19a;
+    cursor: move; background: #d4ecb0; opacity: 0.8;
+    -moz-box-shadow: 1px 1px 3px #ccc; -webkit-box-shadow: 1px 1px 3px #ccc; box-shadow: 1px 1px 3px #ccc;
+    -moz-border-radius: 3px; border-radius: 3px;}
+
+.items_container { }  
+.items_container h2     {float:left}
+.items_container div    {float: right; padding: 2px 6px 2px 6px; border-style: dashed; background-color: white; cursor: default}
+.items_container img    {float: left; margin: 2px 6px 0 0; }
+.items_container a      {text-decoration: none; font-weight: bold}
+
+
+/*  ---------------------------
+            FOOTER
+    --------------------------- */
+#footer {
+    padding: 20px 0 0 120px;}
+#footer th {
+    padding-right: 100px;}
+
+.hd { height: 16px; width: 478px}
+
+
+/*  ---------------------------
+            MESSAGE BOX
+    --------------------------- */
+#msg_user {
+    width: 350px; float: right; }
+#msg_user label {
+    display: block; float: left; margin-right: 15px; color: #e07a0d;}
+.message {
+    border-bottom: 1px solid #DAE2FB; padding-bottom: 4px; margin-top: 10px }
+.msg_date {
+    float: right; font-size: smaller}
+.msg_nick {
+    color: #e07a0d; }
+
+
+/*  ---------------------------
+        NEW JOOMEN
+    --------------------------- */
+#new_joomen {}
+#new_joomen .pw_checkbox { float: right; width: 150px}
+#new_joomen .pw_checkbox label { display: inline;}
+#new_joomen .btn { float: left}
+#pw_input { display: none}

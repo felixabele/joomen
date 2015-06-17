@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /find/
+Disallow: /users/
+Disallow: /rss/
+Disallow: /log/
+Disallow: /events/
+Disallow: /items/
+Disallow: /histories/
+Disallow: /messages/
+
+Allow: /find/demo_de
+Allow: /find/demo_en

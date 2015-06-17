@@ -1,0 +1,63 @@
+
+body {
+  font-family: "trebuchet MS", verdana; color: #626095; 
+  margin: 0; padding: 0; font-size: 13px}
+a:link, a:visited {
+  border: none; color: #626095; font-size: 12px}
+a img {
+  border:none;}
+h1 {
+    font-size: 1.6em; text-shadow: 1px 1px 1px #fff;}
+h2 {
+  font-size: 1.2em; margin-bottom: 0.5em; display: inline}
+p {}
+
+/*  ---------------------------
+            Grund-Layout
+    --------------------------- */
+#container {}
+
+#header {
+ color: #fff;
+ height:60px;
+ padding-left: 30px; padding-top: 20px;
+}
+#content {
+  padding: 10px; min-height: 400px; padding-left: 30px;
+}
+
+#left_column, #right_column {
+	float: left; width:500px;}
+
+.menu_item {
+    float: left; margin: 16px 15px 0 15px;}
+.logo { 
+    float: left; margin-right: 120px;
+}
+
+
+/*  ---------------------------
+            FOOTER
+    --------------------------- */
+#footer {
+    padding: 20px 0 0 120px;}
+#footer th {
+    padding-right: 100px;}
+
+.message {
+    border-bottom: 1px solid #DAE2FB; padding-bottom: 4px; margin-top: 10px }
+.msg_date { float: right; font-size: smaller}
+
+
+/*  ---------------------------
+            PRINT
+    --------------------------- */
+.teiln_box {
+    min-width: 300px; min-height: 100px;
+    float: left; margin: 10px 20px 10px 0; padding: 1px;
+    border: 1px gray solid}
+.teiln_box_header {
+    color: #626095; padding: 3px; font-weight: bold; font-size: 1.2em;
+    border-bottom: 1px solid gray}
+.teiln_box_body {padding: 3px;}
+.teiln_box_body ul { padding-left: 2px; margin-left: 14px; margin-top: 0}

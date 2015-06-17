@@ -1,0 +1,33 @@
+<%#
+  Print View
+%>
+
+
+<h1><%= @event.name %></h1>
+
+
+
+<!-- USERS -->
+<h2><%= t(:txt_users) %></h2>
+<br />
+
+<% @event.users.each do |user| %>
+<div class="teiln_box">
+
+  <div class="teiln_box_header">
+    <%= h(user.name) %>
+  </div>
+
+  <div class="teiln_box_body">
+    <ul>
+    <% user.items.each do |item| %>
+      <li><%= item.name %></li>
+    <% end %>
+    </ul>
+  </div>
+    
+</div>
+<% end %>
+
+
+

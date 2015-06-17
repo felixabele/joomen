@@ -1,0 +1,18 @@
+<%#
+  ITEM
+%>
+
+<div id="item_<%= item.id %>" class="draggable block_item">
+    <div class="i_top">
+      <%= link_to(image_tag('/images/icons/delete.png'), item, :method=>:delete, 
+        :style => " float: right; margin: 2px 2px 0 0",
+        :title => t(:txt_delete_task),
+        :confirm => t(:msg_delete_task)) %>
+    </div>
+    <div class="i_mid">
+      <%= h(item.name) %>
+    </div>
+    <div class="i_bottom"></div>
+  </div>
+
+

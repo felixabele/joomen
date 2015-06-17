@@ -1,0 +1,48 @@
+# Localisation für Deutsch
+
+de:
+
+  # ==========================================
+  #     CONTROLLER
+  # ==========================================
+
+  # Events-Controller
+  events_edit_succ:    'Event wurde erfolgreich editiert.'
+  events_create_succ:  'joomen wurde erfolgreich erstellt.'
+  events_create_err1:  'Bitte geben Sie ihrem  neuen Joomen einen Namen.'
+  events_destroy_succ: 'Event wurde erfolgreich gelöscht.'
+
+  # Items-Controller  
+  items_create_succ:     'Aufgabe wurde erfolgreich erstellt.'
+  items_create_err1:     'Sie müssen einen Namen für diese Aufgabe angaben'
+  items_assign_usr_succ: 'Aufgabe wurde erfolgreich zugeordnet.'
+  items_assign_usr_err1: 'Fehler beim Zuordnen.'
+  items_set_free_succ:   'Aufgabe wurde erfolgreich freigesetzt.'
+  items_set_free_err1:   'Fehler beim Freisetzen.'
+  items_destroy_succ:    'Aufgabe wurde erfolgreich gelöscht.'
+
+  # Message-Controller
+  msg_create_succ:  'Nachricht gespeichert'
+  msg_create_err1:  'Deine Nachricht war zu kurz'
+
+  # User-Controller  
+  users_create_succ:  'User wurde erfolgreich erstellt.'
+
+
+  # ==========================================
+  #     VIEWS
+  # ==========================================
+  txt_users:        'Teilnehmer'
+  txt_tasks:        'Aufgaben'
+  txt_add_task:     'Aufgabe hinzufügen'
+  txt_messages:     'Nachrichten'
+  txt_send:         'Senden'
+  txt_destroy_usr:  'Teilnehmer entfernen'
+  txt_add_usr:      'Teilnehmer hinzufügen'
+  txt_print:        'drucken'
+  txt_activities:   'Aktivitäten'
+  txt_delete_task:  'Aufgabe löschen'
+  txt_task_list:    'Afgaben-Liste'
+
+  msg_delete_usr:   'Wollen Sie diesen Teinehmer wirklich löschen ?'
+  msg_delete_task:  'Wollen Sie diese Aufgabe wirklich löschen ?'

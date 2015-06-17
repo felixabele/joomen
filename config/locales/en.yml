@@ -1,0 +1,49 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+
+  # ==========================================
+  #     CONTROLLER
+  # ==========================================
+
+  # Events-Controller
+  events_edit_succ:    'Event has been edited successfully.'
+  events_create_succ:  'joomen has been created successfully.'
+  events_create_err1:  'Please chose a name for your new Joomen.'
+  events_destroy_succ: 'Event has been deleted successfully.'
+
+  # Items-Controller
+  items_create_succ:     'Task has been created successfully.'
+  items_create_err1:     'Please chose a name for your new Task.'
+  items_assign_usr_succ: 'Task has been assigned successfully.'
+  items_assign_usr_err1: 'There has been an error on this Task.'
+  items_set_free_succ:   'This Task has been released successfully.'
+  items_set_free_err1:   'An error occurred on releasing a Task.'
+  items_destroy_succ:    'Task has been deleted successfully.'
+
+  # Message-Controller
+  msg_create_succ:  'Message saved'
+  msg_create_err1:  'Please post a longer message'
+
+  # User-Controller
+  users_create_succ:  'User has been created successfully.'
+
+
+  # ==========================================
+  #     VIEWS
+  # ==========================================
+  txt_users:        'Attendees'
+  txt_tasks:        'Tasks'
+  txt_add_task:     'Add task'
+  txt_messages:     'Messages'
+  txt_send:         'Send'
+  txt_destroy_usr:  'Remove attendee'
+  txt_add_usr:      'Add attendee'
+  txt_print:        'print'
+  txt_activities:   'Activities'
+  txt_delete_task:  'Delete task'
+  txt_task_list:    'Task-List'
+
+  msg_delete_usr:   'Are you shure ?'
+  msg_delete_task:  'Are you shure ?'

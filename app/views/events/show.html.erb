@@ -1,0 +1,117 @@
+<h1><%= @event.name %></h1><br />
+
+<div id="left_column">
+  
+    <!-- ITEMS -->
+    <div class="hd items_container">
+      <h2><%= t(:txt_tasks) %></h2>
+      <div>
+        <%= link_to(image_tag('/images/icons/add.png') + t(:txt_add_task), {
+            :controller => :items, :action => :create, :id => @event.id, :format => :js },          
+            :class => "dialog", :title => t(:txt_add_task)) %>
+      </div>
+    </div>
+    <br clear="all" />    
+  
+    <!-- FREE ITEMS -->
+    <%= start_roundedBox(460) %>
+
+    <div class="box_body" id="free_items">       
+        <% @event.free_items.each do |item| %>
+          <%= render :partial => "items/item_row",
+              :locals => {:item => item} %>
+        <% end %>        
+    </div>
+
+    <%= end_roundedBox(460) %>
+    <br />
+    
+    <!-- MESSAGES -->
+    <div class="hd">
+      <h2><%= t(:txt_messages) %> </h2><br clear="all" />
+    </div>
+    <br />
+    <%= start_roundedBox(460) %>
+
+      <% @event.messages.each do |message| %>
+      <div class="message">
+        <div class="msg_date"><%= german_format(message.created_at) %></div>
+        <%= message.user_name.nil? || message.user_name.empty? ? '' : "<span class='msg_nick'>#{message.user_name}:</span>".html_safe %>
+        <%= h(message.text) %>
+      </div>
+      <% end %>
+
+      <%= form_for(:message, :url => {:controller => :messages, :action => :create}, :html => {:id=>"new_msg"}) do |f| %>
+          <p>
+            <%= f.text_area(:text, :size => "50x2") %>
+            <%= hidden_field(:event, :id) %>
+          </p>
+
+          <!-- define user -->
+          <div id="msg_user">
+          <label><%= radio_button("message", "user_name", "") %> Anonym</label>
+          <% @event.users.each do |user| %>
+            <label><%= radio_button("message", "user_name", user.name) %>
+            <%= user.name %> </label>
+          <% end %>
+          </div>
+
+          <%= cust_submit("new_msg", t(:txt_send)) %>
+          <br clear="all" />
+      <% end %>
+    <%= end_roundedBox(460) %>    
+</div>
+
+<div id="right_column">
+
+    <!-- USERS -->    
+    <div class="hd">
+      <h2><%= t(:txt_users) %></h2>
+    </div>
+    
+    <%= render :partial => "users/create" %>        
+
+    <% @event.users.each do |user| %>
+
+        <div class="user_container">
+            <div class="u_left"></div>
+            <div class="u_middle">
+              <div style="float:left"><%= h(user.name) %></div>
+              <%= link_to(image_tag('/images/icons/delete_2.png'),
+                {:controller => :users, :action => :destroy, :id => user.id},
+                :confirm => t(:msg_delete_usr),
+                :style => "float: right", :title => t(:txt_destroy_usr)) %>
+            </div>
+            <div class="u_right"></div>
+            <br clear="all" />
+
+            <div class="user" id="<%= user.id %>">
+
+                <% user.items.each do |item| %>
+                    <%= render :partial => "items/item_row",
+                        :locals => {:item => item} %>
+                <% end %>
+            </div>            
+        </div>    
+
+    <% end %>   
+    <br />  
+</div>
+
+
+
+<br clear="all" /><br />
+
+<!-- Actions -->
+<div>
+  <%= image_tag('/images/icons/print.png') %>
+  <%= link_to(t(:txt_print), {:action => :print, :id => @event.key}, :target => "_blank" ) %>
+
+  <%= image_tag('/images/icons/history.png') %>
+  <%= link_to(t(:txt_activities), "/log/#{@event.id}", :target => "_blank" ) %>
+
+  <%= image_tag('/images/icons/rss.png') %>
+  <%= link_to('RSS', "/rss/#{@event.key}", :target => "_blank" ) %>
+</div>
+
+

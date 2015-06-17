@@ -1,0 +1,24 @@
+<%#
+# Shows the Action-History of an Event
+%>
+
+<h1>Activities</h1>
+
+<p>
+  You can find all activities of the last 30 days listed here.
+</p>
+
+<p>
+  <%= start_roundedBox(600) %>
+
+    <% @histories.each do |hist| %>    
+    <div class="message">
+      <div class="msg_date">          
+          <%= en_time_format(hist.created_at) %>
+      </div>
+      <%= h(hist.action) %>
+    </div>
+    <% end %>
+
+  <%= end_roundedBox(600) %>
+</p>
